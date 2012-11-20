@@ -1,0 +1,4 @@
+# Включаем переадресацию
+RewriteEngine on
+# файлы с этими разрешениями не трогаем
+RewriteRule !\.(js|ico|gif|jpg|png|css|pdf|mov|mp3)$ index.php

@@ -1,0 +1,20 @@
+<h1>Ошибка!</h1>
+ 
+<!-- Вывод сообщения из контроллера -->
+ 
+<h2><?php echo $this->message; ?></h2>
+ 
+<!-- Если в bootstrap.php есть строка
+define('APPLICATION_ENVIRONMENT')
+or define('APPLICATION_ENVIRONMENT' , 'development');
+т.е. это решим отлова ошибок -->
+<?php if('development' == $this->env):?>
+<h3>Информация об ошибке:</h3>
+<p>
+<b>Сообщение:</b> <?php echo $this->exception->getMessage()?>
+</p>
+<h3>Стека</h3>
+<pre><?php echo $this->exception->getTraceAsString();?></pre>
+<h3>Параметры запроса</h3>
+<pre><?php var_dump($this->request->getParams());?></pre>
+<?php endif;?>
